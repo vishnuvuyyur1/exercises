@@ -23,3 +23,11 @@ Given X= [1, 8, 7, 3, 4, 1, 8], Y=[6, 4, 1, 8, 5, 1, 7], the function should ret
 Function Description Complete the function isPangram n the editor below. isPangram has the following parameter(s): string pangram[n]: an array of strings Returns: string: a string where each position represents the results of a test. Use '1' for true and 'O' for false.
 
 Constraints 1 ≤ n ≤ 100 Each string pangram[i] (where 0 <i<n) is composed of lowercase letters and spaces 1<= length of panagram[i] <= 10power5
+
+## Elevator.java
+
+You check in at a hotel - one of the tallest buildings in the world. When taking the elevator, you realize that particular hotel has a superstition: There are no floors whose number has a '4' or '13' as part of it.
+That means that hotel has no 4th floor, nor a 13th, nor a 134th, nor a 113rd - but they do have the 103rd. Therefore, first floors are numbered as 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 15, 16, and so on...
+The hotel wants to build a second tower but they don't want to go through the hassle of numbering floors by hand. They want to have an algorithm that, given a "real" floor number, returns the "lucky" version and removes any floors that contain '4' or '13' as part of their numbers.
+Example
+Given that the real floor number 12, its "lucky" version will be 15:
