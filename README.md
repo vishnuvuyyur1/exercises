@@ -20,6 +20,13 @@ Given X= [1, 8, 7, 3, 4, 1, 8], Y=[6, 4, 1, 8, 5, 1, 7], the function should ret
 
 ## Pangram.java
 
+A string is a pangram if it contains all letters of the English alphabet, ascii['a'- 'z']. Given a list of strings, determine if each one is a pangram or not. Return "1" if true and "O" if false.
+Example
+pangram = ['pack my box with five dozen liquor jugs', 'this is not a pangram']
+the string 'pack my box with five dozen liquor jugs' is a pangram, because it contains all the letters 'a' through 'z'
+the string 'this is not a pangram' is not a pangram
+• Assemble a string of the two results, in order. The result is '10'.
+
 Function Description Complete the function isPangram n the editor below. isPangram has the following parameter(s): string pangram[n]: an array of strings Returns: string: a string where each position represents the results of a test. Use '1' for true and 'O' for false.
 
 Constraints 1 ≤ n ≤ 100 Each string pangram[i] (where 0 <i<n) is composed of lowercase letters and spaces 1<= length of panagram[i] <= 10power5
