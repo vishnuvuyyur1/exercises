@@ -38,3 +38,12 @@ That means that hotel has no 4th floor, nor a 13th, nor a 134th, nor a 113rd - b
 The hotel wants to build a second tower but they don't want to go through the hassle of numbering floors by hand. They want to have an algorithm that, given a "real" floor number, returns the "lucky" version and removes any floors that contain '4' or '13' as part of their numbers.
 Example
 Given that the real floor number 12, its "lucky" version will be 15:
+
+## priceCheck.js
+
+There is a shop with old-style cash registers. Rather than scanning items and pulling the price from a database, the price of each item is typed in manually. This method sometimes leads to errors. Given a list of items and their correct prices, compare the prices to those entered when each item was sold. Determine the number of errors in selling prices.
+Example
+products = ['eggs', 'milk', 'cheese']
+productPrices = [2.89, 3.29, 5.79]
+productSold = ['eggs', 'eggs', 'cheese', 'milk']
+soldPrice = [2.89, 2.99, 5.97, 3.29].
