@@ -1,3 +1,5 @@
+package codility;
+
 import java.util.HashSet;
 public class DominosGame {
 	public String solution(String[] A) {

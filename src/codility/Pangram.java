@@ -1,4 +1,4 @@
-package com.klm.cases.df.service;
+package codility;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.klm.cases.df.service;
+package codility;
 
 public class Elevator {
 	static int getLuckyFloorNumber(int n) {
