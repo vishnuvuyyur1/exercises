@@ -1,3 +1,5 @@
+package arrays;
+
 public class ArrayMergeAndSort {
     public static void main(String[] args) {
         int[] a = new int[]{1, 2, 6, 8};

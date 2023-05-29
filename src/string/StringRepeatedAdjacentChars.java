@@ -1,4 +1,6 @@
-public class StringRepeatedChars {
+package string;
+
+public class StringRepeatedAdjacentChars {
     public static void main(String[] args){
         String str = "aabbcbbbdee";
         //output = a2bc3bd2e
