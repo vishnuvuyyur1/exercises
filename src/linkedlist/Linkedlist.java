@@ -57,12 +57,32 @@ public class Linkedlist<E> implements ILinkedList<E> {
             while (current != null) {
                 index = current.next;
                 while (index != null) {
-                    if ((Integer) current.item > (Integer) index.item) {
+                   if ((Integer) current.item > (Integer) index.item) {
                         temp = current.item;
                         current.item = index.item;
                         index.item = temp;
                     }
                     index = index.next;
+                }
+                current = current.next;
+            }
+        }
+    }
+
+    public void removeDuplicate(){
+        if(head.item instanceof Integer) {
+            Node<E> current = head;
+            Node<E> index = null;
+            E temp;
+            while (current != null) {
+                index = current.next;
+                while (index != null) {
+                    if(current.item == index.item){
+                        current.next = index.next;
+                        index=current.next;
+                    } else{
+                        index = index.next;
+                    }
                 }
                 current = current.next;
             }

@@ -7,9 +7,12 @@ public class Main {
         list.add(7);
         list.add(5);
         list.add(4);
+        list.add(7);
         System.out.println(list.size());
         list.display();
         list.sort();
+
+        list.removeDuplicate();
         list.display();
         Linkedlist<Integer> list2 = new Linkedlist<>();
         list2.add(3);
