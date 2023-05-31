@@ -3,7 +3,7 @@ package string;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RemoveDuplicatesFromString {
+public class RemoveDuplicatesFromStringMap {
 public static void main(String[] args){
     String s = "geeksforgeeks";
     rempoveDuplicates(s);

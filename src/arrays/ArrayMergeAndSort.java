@@ -3,7 +3,7 @@ package arrays;
 public class ArrayMergeAndSort {
     public static void main(String[] args) {
         int[] a = new int[]{1, 2, 6, 8};
-        int[] b = new int[]{3, 2, 7, 9};
+        int[] b = new int[]{2, 3, 7, 9};
         for (int i : sortArrays(a, b)) {
             System.out.println(i);
         }
@@ -24,7 +24,7 @@ public class ArrayMergeAndSort {
     static int[] doSort(int[] arr) {
         for(int a=0;a<arr.length-1; a++){
             for (int i = 0; i < arr.length-a- 1; i++) {
-            if (arr[i] < arr[i + 1]) {
+            if (arr[i] > arr[i + 1]) {
                 int temp = arr[i];
                 arr[i] = arr[i + 1];
                 arr[i + 1] = temp;

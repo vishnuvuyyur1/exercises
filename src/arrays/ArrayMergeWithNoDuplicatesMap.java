@@ -3,7 +3,7 @@ package arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ArrayMergeWithNoDuplicates {
+public class ArrayMergeWithNoDuplicatesMap {
     public static void main(String[] args){
         int[] a = new int[]{1,2,5,7,9};
         int[] b = new int[]{1,3,4,7};

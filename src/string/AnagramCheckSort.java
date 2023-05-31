@@ -6,7 +6,7 @@ import java.util.Arrays;
 // but in a different order, for example, "Army" and "Mary" is the anagram.
 //
 //Read more: https://www.java67.com/2018/04/21-string-programming-and-coding-interview-questions-answers.html#ixzz836AszIue
-public class AnagramCheck {
+public class AnagramCheckSort {
     public static void main(String[] args){
         String a="Army";
         String b="Mary";

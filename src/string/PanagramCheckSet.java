@@ -3,7 +3,7 @@ package string;
 import java.util.HashSet;
 import java.util.Set;
 
-public class PanagramCheck {
+public class PanagramCheckSet {
     public static void main(String[] args) {
         String s = "pack my box with five dozn liquor jugs";
         String str = s.replaceAll("\\s+", "");

@@ -10,12 +10,12 @@ public class Main {
         list.add(7);
         System.out.println(list.size());
         list.display();
-        list.sort();
+//        list.sort();
 
-        list.removeDuplicate();
+        list.removeDuplicateFromSortedList();
         list.display();
         Linkedlist<Integer> list2 = new Linkedlist<>();
-        list2.add(3);
+        list2.add(9);
         list2.add(6);
         LinkedlistService<Integer> ser = new LinkedlistService<>();
         Linkedlist<Integer> result = ser.sortTwoLists(list,list2);

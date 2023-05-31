@@ -1,10 +1,11 @@
 package linkedlist;
 
+import java.util.HashSet;
+
 public class Linkedlist<E> implements ILinkedList<E> {
     int size;
     Node<E> head;
     Node<E> tail;
-
     public Linkedlist() {
 
     }
@@ -69,7 +70,7 @@ public class Linkedlist<E> implements ILinkedList<E> {
         }
     }
 
-    public void removeDuplicate(){
+    public void removeDuplicateFromSortedList(){
         if(head.item instanceof Integer) {
             Node<E> current = head;
             Node<E> index = null;
@@ -87,6 +88,54 @@ public class Linkedlist<E> implements ILinkedList<E> {
                 current = current.next;
             }
         }
+    }
+
+    /* Function to remove duplicates from a
+      unsorted linked list */
+    void removeDuplicate()
+    {
+        // Hash to store seen values
+        HashSet<Integer> hs = new HashSet<>();
+
+        /* Pick elements one by one */
+        Node current = head;
+        Node prev = null;
+        while (current != null) {
+            int curval = (int) current.item;
+
+            // If current value is seen before
+            if (hs.contains(curval)) {
+                prev.next = current.next;
+            }
+            else {
+                hs.add(curval);
+                prev = current;
+            }
+            current = current.next;
+        }
+    }
+
+    // Returns true if there is a loop in linked
+    // list else returns false.
+     boolean detectLoop(Node<E> h)
+    {
+        HashSet<Node> s = new HashSet<>();
+        while (h != null) {
+            // If we have already has this node
+            // in hashmap it means there is a cycle
+            // (Because you we encountering the
+            // node second time).
+            if (s.contains(h))
+                return true;
+
+            // If we are seeing the node for
+            // the first time, insert it in hash
+            s.add(h);
+
+            h = h.next;
+        }
+
+        return false;
     }
 
      static class Node<E> {

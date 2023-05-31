@@ -4,10 +4,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class FirstNonRepeatingChar {
+public class StringDuplicateLettersMap {
     public static void main(String[] args){
         String str = "walhalla";
-        firstNonRepeatingChar(str);
+        duplcateLetters(str);
     }
 
     static Map<Character, Integer> letterCount(String str){
@@ -23,14 +23,9 @@ public class FirstNonRepeatingChar {
         return countMap;
     }
 
-    static void firstNonRepeatingChar(String str){
+    static void duplcateLetters(String str){
         Map<Character, Integer> countMap = letterCount(str);
-       for(char c: countMap.keySet()){
-           if(countMap.get(c)==1){
-               System.out.println(c);
-               break;
-           }
-       }
+        List<Character> duplicatesInString = countMap.keySet().stream().filter(letter -> countMap.get(letter)>1).toList();
+        System.out.println(duplicatesInString);
     }
 }
-

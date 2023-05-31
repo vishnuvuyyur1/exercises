@@ -1,13 +1,12 @@
 package string;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-public class StringDuplicateLetters {
+public class FirstNonRepeatingCharMap {
     public static void main(String[] args){
         String str = "walhalla";
-        duplcateLetters(str);
+        firstNonRepeatingChar(str);
     }
 
     static Map<Character, Integer> letterCount(String str){
@@ -23,9 +22,14 @@ public class StringDuplicateLetters {
         return countMap;
     }
 
-    static void duplcateLetters(String str){
+    static void firstNonRepeatingChar(String str){
         Map<Character, Integer> countMap = letterCount(str);
-        List<Character> duplicatesInString = countMap.keySet().stream().filter(letter -> countMap.get(letter)>1).toList();
-        System.out.println(duplicatesInString);
+       for(char c: countMap.keySet()){
+           if(countMap.get(c)==1){
+               System.out.println(c);
+               break;
+           }
+       }
     }
 }
+
