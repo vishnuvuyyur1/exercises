@@ -1,4 +1,4 @@
-package arrays;
+package scratch.arrays;
 
 import java.util.Arrays;
 //Time Complexity for mergin two sorted arrays: O(N + M), space o(m+n), m, n are size of the input arrays

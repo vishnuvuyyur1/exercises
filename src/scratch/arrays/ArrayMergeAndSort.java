@@ -1,4 +1,4 @@
-package arrays;
+package scratch.arrays;
 
 public class ArrayMergeAndSort {
     public static void main(String[] args) {

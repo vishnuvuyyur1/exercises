@@ -1,4 +1,4 @@
-package string;
+package scratch.arrays;
 
 public class LengthMaxConsecutiveSubString {
     public static void main(String[] args){

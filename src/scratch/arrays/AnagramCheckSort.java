@@ -1,4 +1,4 @@
-package string;
+package scratch.arrays;
 
 import java.util.Arrays;
 

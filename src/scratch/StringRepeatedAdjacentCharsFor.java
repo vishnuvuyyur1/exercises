@@ -1,4 +1,4 @@
-package string;
+package scratch;
 
 import java.util.HashSet;
 import java.util.Set;
