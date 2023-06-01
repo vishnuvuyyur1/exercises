@@ -2,13 +2,12 @@ package arrays;
 
 import java.util.*;
 
-public class RemoveDupFromSortedArray {
+public class RemoveDupFromArray {
 
     public static void main(String[] args){
         int[] a = new int[]{1,5,7,3,4,5,3};
-        int[] sortedA = sort(a);
-        System.out.println(Arrays.toString(sortedA));
-        System.out.println(Arrays.toString(rempoveDuplicates(sortedA)));
+         sort(a);
+        System.out.println(Arrays.toString(rempoveDuplicates(a)));
         System.out.println(Arrays.toString(rempoveDuplicates2()));
     }
     static int[] sort(int[] a){
