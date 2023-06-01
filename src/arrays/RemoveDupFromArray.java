@@ -8,7 +8,8 @@ public class RemoveDupFromArray {
         int[] a = new int[]{1,5,7,3,4,5,3};
          sort(a);
         System.out.println(Arrays.toString(rempoveDuplicates(a)));
-        System.out.println(Arrays.toString(rempoveDuplicates2()));
+
+        removeDuplicates3();
     }
     static int[] sort(int[] a){
         for(int e=0;e<a.length-1;e++) {
@@ -47,5 +48,18 @@ public class RemoveDupFromArray {
       }
        int b[] = s.stream().mapToInt(i->i).toArray();
       return b;
+    }
+
+    static void removeDuplicates3(){
+        int[] a = new int[]{1,5,7,3,4,5,3};
+        List b = new ArrayList<>();
+        for(int i=0;i<a.length;i++){
+            for(int j=1;j<a.length;j++){
+                if(a[i]!=a[j] && !b.contains(a[i])){
+                    b.add(a[i]);
+                }
+            }
+        }
+        System.out.println(b);
     }
 }

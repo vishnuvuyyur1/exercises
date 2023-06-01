@@ -24,6 +24,9 @@ public class StringDuplicateLettersMap {
 
     static void duplcateLetters(String str){
         Map<Character, Integer> countMap = letterCount(str);
+        for(Map.Entry e:countMap.entrySet()){
+            System.out.println(e.getKey()+":"+e.getValue());
+        }
         List<Character> duplicatesInString = countMap.keySet().stream().filter(letter -> countMap.get(letter)>1).toList();
         System.out.println(duplicatesInString);
     }
