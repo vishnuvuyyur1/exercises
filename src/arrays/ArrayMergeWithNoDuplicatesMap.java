@@ -4,7 +4,7 @@ import java.util.*;
 
 public class ArrayMergeWithNoDuplicatesMap {
     public static void main(String[] args){
-        int[] a = new int[]{1,2,5,7,9};
+        int[] a = new int[]{1,2,5,7,9,1};
         int[] b = new int[]{1,3,4,7};
         solution(a,b);
         solution2(a,b);
@@ -33,15 +33,17 @@ public class ArrayMergeWithNoDuplicatesMap {
         System.arraycopy(a, 0, c, 0, a.length);
         System.arraycopy(b, 0, c, a.length, b.length);
         System.out.println(Arrays.toString(c));
-        Set set = new HashSet<>();
+        Set all = new TreeSet<>();
+        Set dupes = new HashSet<>();
         for(int i=0;i<c.length;i++){
-            if(set.contains(c[i])){
-                set.remove(c[i]);
+            if(all.contains(c[i])){
+                dupes.add(c[i]);
             }else{
-                set.add(c[i]);
+                all.add(c[i]);
             }
         }
-        System.out.println(set);
+        all.removeAll(dupes);
+        System.out.println(all);
     }
 }
 

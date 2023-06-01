@@ -1,13 +1,12 @@
 package string;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class StringDuplicateLettersMap {
     public static void main(String[] args){
         String str = "walhalla";
         duplcateLetters(str);
+        solution2();
     }
 
     static Map<Character, Integer> letterCount(String str){
@@ -27,5 +26,18 @@ public class StringDuplicateLettersMap {
         Map<Character, Integer> countMap = letterCount(str);
         List<Character> duplicatesInString = countMap.keySet().stream().filter(letter -> countMap.get(letter)>1).toList();
         System.out.println(duplicatesInString);
+    }
+    static void solution2() {
+        String str = "walhalla";
+        List nonDupes = new ArrayList<>();
+        Set dupes = new HashSet<>();
+        for(char c: str.toCharArray()){
+            if(nonDupes.contains(c)){
+                dupes.add(c);
+            }else{
+                nonDupes.add(c);
+            }
+        }
+        System.out.println(dupes);
     }
 }
