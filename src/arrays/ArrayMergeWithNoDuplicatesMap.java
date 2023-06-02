@@ -1,6 +1,7 @@
 package arrays;
 
 import java.util.*;
+// System.out.println(Arrays.stream(arr).mapToObj(Integer::toString).collect(Collectors.joining(",")));
 
 public class ArrayMergeWithNoDuplicatesMap {
     public static void main(String[] args){
@@ -8,6 +9,7 @@ public class ArrayMergeWithNoDuplicatesMap {
         int[] b = new int[]{1,3,4,7};
         solution(a,b);
         solution2(a,b);
+        solution3();
     }
     static void solution(int[] a, int[] b){
         int[] c = new int[a.length+b.length];
@@ -44,6 +46,21 @@ public class ArrayMergeWithNoDuplicatesMap {
         }
         all.removeAll(dupes);
         System.out.println(all);
+    }
+
+    static void solution3(){
+        int[] a = new int[]{1,2,5,7,9,1};
+        int[] b = new int[]{1,3,4,7};
+
+        List<Integer> A= Arrays.stream(a).boxed().toList();
+        List<Integer> B=Arrays.stream(b).boxed().toList();
+        List<Integer> ItemsInANotInB= A.stream().filter(itemA->!B.contains(itemA)).toList();
+        List<Integer> ItemsInBNotInA= B.stream().filter(itemA->!A.contains(itemA)).toList();
+        List output = new ArrayList<>();
+        output.addAll(ItemsInANotInB);
+        output.addAll(ItemsInBNotInA);
+        output.stream().mapToInt(k-> (int) k).toArray();
+        System.out.println(output);
     }
 }
 

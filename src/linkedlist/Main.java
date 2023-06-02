@@ -1,5 +1,6 @@
 package linkedlist;
 //Time Complexity: O(N + M), where N and M are the size of list1 and list2 respectively
+// space complexity o(1) since no additional objects are created
 public class Main {
     public static void main(String[] args) {
         Linkedlist<Integer> list = new Linkedlist<>();
