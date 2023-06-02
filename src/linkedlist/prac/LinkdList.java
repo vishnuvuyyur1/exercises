@@ -155,12 +155,48 @@ public class LinkdList {
         LinkdList b = new LinkdList();
         b.add(1);
         b.add(3);
-        MereList m = new MereList();
-        m.mergeTwoSortedLists(a,b);
+        MergeList m = new MergeList();
+       // m.mergeTwoSortedLists(a,b);
+        LinkdList c = new LinkdList();
+        c.add(4);
+        c.add(8);
+        LinkdList d = new LinkdList();
+        d.add(1);
+        d.add(2);
+        d.add(6);
+        d.add(9);
+        d.add(12);
+        d.add(22);
+        LinkdList[] lists = new LinkdList[]{a,b,c,d};
+        m.mergrNSortedLists(lists);
     }
 
-    public static class MereList{
-        void mergeTwoSortedLists(LinkdList ll1, LinkdList ll2){
+    public static class MergeList{
+
+        LinkdList mergrNSortedLists(LinkdList[] lists){
+            if(lists==null){
+                return null;
+            }
+            if(lists.length ==1){
+                return lists[0];
+            }
+            if(lists.length==2){
+                return mergeTwoSortedLists(lists[0],lists[1]);
+            }
+            LinkdList ll3=null;
+            if(lists.length>2){
+               ll3 = mergeTwoSortedLists(lists[0],lists[1]);
+               int counter=2;
+               while(lists.length>counter){
+                  ll3=  mergeTwoSortedLists(ll3,lists[counter]);
+                   counter++;
+               }
+
+            }
+            ll3.display();
+           return ll3;
+        }
+        LinkdList mergeTwoSortedLists(LinkdList ll1, LinkdList ll2){
             Node a=ll1.head;
             Node b=ll2.head;
             LinkdList c = new LinkdList();
@@ -177,17 +213,16 @@ public class LinkdList {
                 }
                 if(a.value<b.value){
                     tail.next = a;
-                    //result = a;
                     a = a.next;
                 }else{
                     tail.next = b;
-                    //result = b;
                     b = b.next;
                 }
                 tail = tail.next;
             }
             c.head = result.next;
             c.display();
+            return c;
         }
     }
 }
