@@ -26,7 +26,12 @@ public class TwoSum3Some {
     }
 
     static void threeSum(){
-        int[] a= new int[]{-1,0,1,2,-1,-4};
+        int[] a= {-1,1,2,0,-1,-4};
+        //List<Integer> aList = Arrays.stream(a).boxed().toList();
+
+        Arrays.sort(a);
+        Collections.reverse(Arrays.asList(a));
+        System.out.println(a);
         int target = 0;
         Set<List<Integer>> result = new HashSet<>();
         for(int i=0;i<a.length;i++){

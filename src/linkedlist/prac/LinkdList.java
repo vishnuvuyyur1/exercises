@@ -36,7 +36,7 @@ public class LinkdList {
 
     void sort(){
         Node current = head;
-        Node adjacent=null;
+        Node adjacent;
         while(current!=null){
             adjacent = current.next;
             while(adjacent!=null){
@@ -78,6 +78,7 @@ public class LinkdList {
         head =null;
         for(int i:set){
             add(i);
+
         }
     }
 
@@ -91,6 +92,25 @@ public class LinkdList {
             }else{
                 return true;
             }
+        }
+        return false;
+    }
+
+    public boolean hasCycle() {
+        if(head == null){
+            return false;
+        }
+
+        Node hare = head;
+        Node turtle = head;
+
+        while(hare != null && hare.next!= null){
+            hare = hare.next.next;
+            turtle = turtle.next;
+
+            if(hare == turtle)
+                return true;
+
         }
         return false;
     }
@@ -121,9 +141,6 @@ public class LinkdList {
     public static class Node{
         int value;
         Node next;
-        Node(){
-
-        }
         Node(int value){
             this.value = value;
         }
@@ -132,6 +149,8 @@ public class LinkdList {
     public static void main(String[] args){
         LinkdList ll = new LinkdList();
         ll.add(1);
+        ll.add(7);
+        ll.add(9);
         ll.add(3);
         ll.add(1);
         ll.add(4);
@@ -144,7 +163,7 @@ public class LinkdList {
         ll.sort();
         ll.display();
         ll.head.next.next.next.next.next = ll.head.next.next;
-        System.out.println(ll.detectLoop());
+        System.out.println(ll.hasCycle());
         ll.deleteLoop();
         ll.display();
         System.out.println(ll.detectLoop());
