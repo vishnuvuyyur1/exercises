@@ -45,6 +45,7 @@ public class LinkkdList {
             current=current.next;
         }
     }
+    //To detect a cycle in a linked list, we can use the "fast and slow pointers" approach.
 //Time complexity: O(n), where n is the number of nodes in the linked list.
 // In the worst case, we need to traverse all the nodes to determine if there is a cycle or not.
 
@@ -113,6 +114,7 @@ public class LinkkdList {
             current=current.next;
         }
     }
+
 
 
     void display(){
@@ -190,7 +192,7 @@ public class LinkkdList {
         list.removeDuplicates();
         list.display();
 
-        list.add(5);
+        list.add(4);
         list.add(5);
         list.add(6);
         list.add(7);
