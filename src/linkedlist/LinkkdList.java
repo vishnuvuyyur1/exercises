@@ -114,7 +114,16 @@ public class LinkkdList {
             current=current.next;
         }
     }
-
+    void reverse(){
+        Node temp = head;
+        head = null;
+        while(temp!=null){
+            Node node = new Node(temp.value);
+            node.next = head;
+            head= node;
+            temp =temp.next;
+        }
+    }
 
 
     void display(){
@@ -200,6 +209,8 @@ public class LinkkdList {
         list.add(9);
         list.display();
         list.removeDuplicaesFromSortedList();
+        list.display();
+        list.reverse();
         list.display();
     }
 }
