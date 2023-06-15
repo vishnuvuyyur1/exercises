@@ -114,6 +114,36 @@ public class LinkkdList {
             current=current.next;
         }
     }
+
+    public Node removeNthFromEnd(int n) {
+        int size =0;
+        Node s = head;
+        while(s!=null){
+            size++;
+            s = s.next;
+        }
+        int nodeToDelete = size-(n-1);
+        Node current = head;
+        head=null;
+        int counter =0;
+        while(current!=null){
+            counter++;
+            if(counter != nodeToDelete){
+                Node newNode = new Node(current.value);
+                if(head == null){
+                    head = newNode;
+                }else{
+                    Node temp= head;
+                    while(temp.next!=null){
+                        temp = temp.next;
+                    }
+                    temp.next = newNode;
+                }
+            }
+            current = current.next;
+        }
+        return head;
+    }
     void reverse(){
         Node temp = head;
         head = null;
