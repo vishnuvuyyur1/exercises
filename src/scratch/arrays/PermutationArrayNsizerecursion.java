@@ -10,6 +10,7 @@ import java.util.Set;
  * for a list of size n, There n! permutations.
  * There are N! permutations and it requires O(N) time to print a permutation. timecomplexity o(n*n!)
  * Space Complexity: O(N). Recursion stack.
+ * Note: After making the recursive call, the swapped elements are reverted. This is to avoid using any extra space to serve a copy.
  * For each permutation,  permutations() method gets calls once so n!, and it requires o(n)
  * time to loop throuh all the elements of the array and each time its calling permutations() method.
    we use a for loop and we are calling permutations() inside for loop, so looping through all
