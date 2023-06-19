@@ -6,7 +6,7 @@ import java.util.Set;
 public class LinkkdList {
 
     Node head;
-    class Node{
+    static class Node{
         int value;
         Node next;
         Node(int value){
@@ -242,5 +242,50 @@ public class LinkkdList {
         list.display();
         list.reverse();
         list.display();
+        LinkkdList l1 = new LinkkdList();
+        l1.add(2);
+        l1.add(4);
+        l1.add(3);
+        LinkkdList l2 = new LinkkdList();
+        l2.add(5);
+        l2.add(6);
+        l2.add(4);
+        addTwoNumbers(l1.head, l2.head);
+    }
+
+    static Node addTwoNumbers(Node l1, Node l2) {
+        String s1="";
+        String s2="";
+        while(l1!=null){
+            s1+= l1.value;
+            l1=l1.next;
+        }
+        while(l2!=null){
+            s2+=l2.value;
+            l2=l2.next;
+        }
+        int i1=Integer.parseInt(reverse(s1));
+        int i2=Integer.parseInt(reverse(s2));
+        String out = String.valueOf(i1+i2);
+        l1=null;
+        for(int i=0;i<out.length();i++){
+            Node newNode = new Node(Integer.valueOf(String.valueOf(out.charAt(i))));
+            if(l1==null){
+                l1 = newNode;
+            }else{
+                Node temp = l1;
+                while(temp.next!=null)
+                    temp = temp.next;
+                temp.next=newNode;
+            }
+        }
+        return l1;
+    }
+    static String reverse(String str){
+        String revered ="";
+        for(int i=str.length()-1;i>=0;i--){
+            revered+= str.charAt(i);
+        }
+        return revered;
     }
 }
