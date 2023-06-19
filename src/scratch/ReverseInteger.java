@@ -2,9 +2,10 @@ package scratch;
 
 public class ReverseInteger {
     public static void main(String[] args){
-        int x=1230;
+        int x=-123;
         String xs = String.valueOf(x);
         System.out.println(xs);
+        System.out.println(Integer.parseInt("-123"));
         char[] c = xs.toCharArray();
         int iterator = c.length/2;
         for(int i=0;i<iterator;i++){

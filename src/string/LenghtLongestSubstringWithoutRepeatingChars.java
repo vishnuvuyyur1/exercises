@@ -4,8 +4,9 @@ import java.util.*;
 
 public class LenghtLongestSubstringWithoutRepeatingChars {
     public static void main(String[] args) {
-        lengthOfLongestSubstring("dvdf");
+        System.out.println(lengthOfLongestSubstring("dvdf"));
        // partialWorkingSolution();
+        System.out.println(lengthOfLongestSubstring2("dvdf"));
     }
 
     private static void partialWorkingSolution() {
@@ -58,5 +59,27 @@ public class LenghtLongestSubstringWithoutRepeatingChars {
 
         }
         return longestLength;
+    }
+
+    public static int lengthOfLongestSubstring2(String s) {
+        int length= 0;
+        int index=0;
+        List<Character> set = new ArrayList<>();
+        for(int i=0;i<s.length();i++){
+            if(!set.contains(s.charAt(i))){
+                set.add(s.charAt(i));
+                length = Math.max(length, set.size());
+            }else{
+                length = Math.max(length, set.size());
+                index = set.indexOf(s.charAt(i));
+                while(index>=0){
+                    set.remove(index);
+                    index--;
+                }
+                set.add(s.charAt(i));
+            }
+        }
+        return length;
+
     }
 }
