@@ -4,8 +4,9 @@ import java.util.*;
 
 public class TwoSum3Some {
     public static void main(String[] args) {
-      twoSum();
-      threeSum();
+//      twoSum();
+//      threeSum();
+        twoSum2();
     }
 
     static void twoSum(){
@@ -23,6 +24,30 @@ public class TwoSum3Some {
                 }
             }
         }
+    }
+
+    public static int[] twoSum2() {
+        int[] nums = new int[]{3,2,3,4,6};
+        int target = 6;
+        int counter = 0;
+        int sum=nums[counter];
+        int i=counter+1;
+        while(i<nums.length){
+            sum+= nums[i];
+            if(sum==target){
+                return new int[]{counter,i};
+            }else{
+                sum = sum-nums[i];
+            }
+            if(i==nums.length-1){
+                counter++;
+                i=counter+1;
+                sum=nums[counter];
+            }else{
+                i++;
+            }
+        }
+        return new int[0];
     }
 
     static void threeSum(){
