@@ -10,4 +10,6 @@ public class TopicsCovered {
     //sorted array with repeated elements, get first index, last index of repeated element
     //non repeating shortest substring in array of words
     // inset, remove, getrandom in o(1) time
+    //neighbors
+    // word build
 }
