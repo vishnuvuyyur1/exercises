@@ -5,7 +5,8 @@ import java.util.*;
 
 // TC: O(1) - O(1) - O(1)
 // SC: O(n)
-
+//https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/solutions/
+//https://leetcode.com/problems/insert-delete-getrandom-o1/description/
 public class RandomizedCollection {
     List<Integer> list;
     Map<Integer,HashSet<Integer>> map;
