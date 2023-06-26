@@ -49,7 +49,7 @@ public class Neighbors {
 
         Map<Character, Set<Character>> result = new HashMap<>();
         for(char first: all) {
-            int max = 0;
+            int max = 1;
             Set<Character> uniques = new HashSet<>();
             for(char second: all) {
                 if(first == second) continue;
@@ -60,9 +60,9 @@ public class Neighbors {
                 int count = counts.getOrDefault(charBuilder.toString(), -1);
                 if(count == max) {
                     uniques.add(second);
-                    max = count;
+                    //max = count;
                 }
-                else if(count > max){
+                else if(count>max){
                     uniques.clear();
                     uniques.add(second);
                     max=count;
