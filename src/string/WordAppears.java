@@ -16,21 +16,22 @@ public class WordAppears {
         //"ILOVEDOG", "CATS" S="CAT" {CATS=0, ILOVEDOG=0}
         //["BILL","BOB"] "BILLOBILLOLLOBBI" ans){BOB=1, BILL=3}
         Map<String,Integer> map =  new HashMap<>();
-        String str="CAT";
-        List<String> list= List.of("ILOVEDOG", "CATS");
+        String str="BILLOBILLOLLOBBI";
+        List<String> list= List.of("BILL", "BOB");
         for(String word:list){
             boolean wordPresent = true;
             int countAppeared = 0;
+            String temp = str;
             while(wordPresent){
                 for(char c:word.toCharArray()){
-                    if(!str.contains(String.valueOf(c))){
+                    if(!temp.contains(String.valueOf(c))){
                         wordPresent = false;
                     }
                 }
                 if(wordPresent){
                     countAppeared++;
                     for(char c:word.toCharArray()){
-                        str = str.replaceFirst(String.valueOf(c),"");
+                        temp = temp.replaceFirst(String.valueOf(c),"");
                     }
                 }
             }
