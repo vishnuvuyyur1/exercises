@@ -13,6 +13,8 @@ public class TopicsCovered {
     //neighbors
     // word build
 
+    //consecutive repeated chars lenght, string output, string output max consecutive repeated char
+
     /**
      * Types of for loops
      *      //Bubble sort

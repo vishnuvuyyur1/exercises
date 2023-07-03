@@ -19,23 +19,18 @@ public class LengthMaxConsecutiveSubString {
         System.out.println(breakcount);
     }
     public int maxPower(String s) {
-        String sub="";
+        int max=1;
         int count=1;
-        boolean repeated = false;
-        int max=0;
-        for(int i=0;i<s.length();i++){
-            if(i>0){
-                if(!sub.contains(String.valueOf(s.charAt(i)))){
-                    sub="";
-                    sub+=s.charAt(i);
-                    count=1;
-                    max= Math.max(max,count);
-                }else{
-                    count++;
-                    max= Math.max(max,count);
-                }
-            }else{
+        String sub="";
+        sub+=s.charAt(0);
+        for(int i=1;i<s.length();i++){
+            if(!sub.contains(String.valueOf(s.charAt(i)))){
+                sub="";
                 sub+=s.charAt(i);
+                count =1;
+                max= Math.max(max,count);
+            }else{
+                count++;
                 max= Math.max(max,count);
             }
         }

@@ -1,8 +1,10 @@
 package scratch;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
-
+// input aabbcbbbdeeee - 2a2b1c3b1d4e
 public class StringRepeatedAdjacentCharsFor {
     public static void main(String[] args){
         String str = "aabbcbbbdee";
@@ -25,8 +27,9 @@ public class StringRepeatedAdjacentCharsFor {
                 seqBroke = true;
             }
         }
-        System.out.println(sb);
-        solution();
+        //System.out.println(sb);
+        solution2();
+        solution3();
     }
 
     static void solution(){
@@ -67,4 +70,82 @@ public class StringRepeatedAdjacentCharsFor {
         String st = output.substring(1);
         System.out.println(st);
     }
+
+    static void solution2(){
+        String s="aabbcbbbdeeee";
+        int max=1;
+        int count=1;
+        String sub="";
+        sub+=s.charAt(0);
+        String out="";
+        if(s.length()==1){
+            out+=s.charAt(0);
+        }
+        for(int i=1;i<s.length();i++){
+            if(!sub.contains(String.valueOf(s.charAt(i)))){
+                    sub="";
+                    sub+=s.charAt(i);
+                    out+=count;
+                    out+=s.charAt(i-1);
+                    if(i==s.length()-1){
+                        out+=1;
+                        out+=s.charAt(i);
+                    }
+                count =1;
+                max= Math.max(max,count);
+            }else{
+                count++;
+                max= Math.max(max,count);
+                if(i==s.length()-1){
+                    out+=count;
+                    out+=s.charAt(i-1);
+                }
+            }
+        }
+        System.out.println(out);
+        System.out.println(max);
+    }
+
+    //For e.g. “aaaabbbbaaaaaaacd”, should result in a: 7, b: 3, c: 1, d: 1
+    // NOTE: “a” occurs twice consecutively, but the second instance has the maximum occurre
+    static void solution3(){
+        String s="aaaabbbbaaaaaaacd";
+        int count=1;
+        String sub="";
+        sub+=s.charAt(0);
+        String out="";
+        Map<Character,Integer> map = new HashMap<>();
+        if(s.length()==1){
+            out+=s.charAt(0);
+        }
+        for(int i=1;i<s.length();i++) {
+            if(!sub.contains(String.valueOf(s.charAt(i)))){
+               sub="";
+               sub+=s.charAt(i);
+                extracted(s, count, map, i);
+                count =1;
+                if(i==s.length()-1){
+                    extracted(s, count, map, i+1);
+                }
+            }else{
+                count++;
+                if(i==s.length()-1){
+                    extracted(s, count, map, i);
+                }
+            }
+        }
+        System.out.println(map);
+    }
+
+    private static void extracted(String s, int count, Map<Character, Integer> map, int i) {
+        if(map.containsKey(s.charAt(i -1))){
+            int c = map.get(s.charAt(i -1));
+            if(count >c){
+                 map.put(s.charAt(i -1), count);
+            }
+        }else{
+            map.put(s.charAt(i -1), count);
+        }
+    }
+
 }
