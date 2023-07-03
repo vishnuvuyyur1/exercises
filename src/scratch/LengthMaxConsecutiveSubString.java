@@ -28,7 +28,6 @@ public class LengthMaxConsecutiveSubString {
                 sub="";
                 sub+=s.charAt(i);
                 count =1;
-                max= Math.max(max,count);
             }else{
                 count++;
                 max= Math.max(max,count);

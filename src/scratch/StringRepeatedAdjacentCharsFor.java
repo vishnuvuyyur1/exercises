@@ -92,7 +92,6 @@ public class StringRepeatedAdjacentCharsFor {
                         out+=s.charAt(i);
                     }
                 count =1;
-                max= Math.max(max,count);
             }else{
                 count++;
                 max= Math.max(max,count);
