@@ -1,13 +1,17 @@
 package string;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class RemoveDuplicatesFromStringMap {
 public static void main(String[] args){
     String s = "geeksforgeeks";
+    int[] a={1,3,2,3,4,5,1};
+    char[] c={'a','b'};
+    int[] b = Arrays.stream(a).distinct().toArray();
+    String out = "";
+    for(Object o : s.chars().distinct().mapToObj(val ->(char)val).toArray()){
+        out+=o;
+    }
     rempoveDuplicates(s);
     rempoveDuplicates2(s);
 }
