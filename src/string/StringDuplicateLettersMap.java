@@ -12,12 +12,7 @@ public class StringDuplicateLettersMap {
     static Map<Character, Integer> letterCount(String str){
         Map<Character, Integer> countMap = new HashMap<>();
         for(char c: str.toCharArray()){
-            if(countMap.containsKey(c)){
-                int counter = countMap.get(c);
-                countMap.put(c, ++counter);
-            }else{
-                countMap.put(c,1);
-            }
+            countMap.put(c,countMap.getOrDefault(c,0)+1);
         }
         return countMap;
     }
