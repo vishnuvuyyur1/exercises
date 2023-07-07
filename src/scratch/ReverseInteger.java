@@ -6,7 +6,7 @@ public class ReverseInteger {
         String xs = String.valueOf(x);
         System.out.println(xs);
         System.out.println(Integer.parseInt("-123"));
-        char[] c = xs.toCharArray();
+        char[] c = xs.substring(1).toCharArray();
         int iterator = c.length/2;
         for(int i=0;i<iterator;i++){
                 char temp = c[i];
@@ -17,6 +17,7 @@ public class ReverseInteger {
         for(char p:c){
             output+=p;
         }
-        System.out.println(Integer.parseInt(output));
+        System.out.println(output);
+        System.out.println(Integer.parseInt("-"+output));
     }
 }
