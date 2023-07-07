@@ -56,4 +56,35 @@ public class ShortestSubstring {
         System.out.println(output);
         System.out.println(out);
     }
+
+    public static void main() {
+        System.out.println("Hello World!");
+        String[] arry = {"cheapair", "heapoair", "cheloton", "pelican"};
+        Map<String,String> map = new HashMap<>();
+        for(int a=0;a<arry.length;a++){
+            char[] chars = arry[a].toCharArray();
+            String output = arry[a];
+
+            for(int i=0;i<chars.length;i++){
+                String sub="";
+                sub+=chars[i];
+                for(int j=i+1;j<chars.length;j++){
+                    sub+=chars[j];
+                    for(int b=0;b<arry.length;b++){
+                        if(a==b) continue;
+                        if(arry[b].contains(sub)){
+                            if(output.equals(sub)) output=arry[a];
+                            break;
+                        }else{
+                            output = output.length()>sub.length()? sub:output;
+                        }
+
+                    }
+
+                }
+            }
+            map.put(arry[a],output);
+        };
+        System.out.println(map);
+    }
 }
