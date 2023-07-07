@@ -4,7 +4,15 @@ package string;
 import java.util.*;
 
 public class ShortestSubstring {
-
+    /**
+     * Input: ["cheapair", "cheapoair", "peloton", "pelican"]
+     * Output:
+     * "cheapair": "pa"  // every other 1-2 length substring overlaps with cheapoair
+     * "cheapoair": "po" // "oa" would also be acceptable
+     * "pelican": "ca"   // "li", "ic", or "an" would also be acceptable
+     * "peloton": "t"    // this single letter doesn't occur in any other string
+     *
+     */
     public static void main(String[] args){
         shortestUniqueSubstr();
     }

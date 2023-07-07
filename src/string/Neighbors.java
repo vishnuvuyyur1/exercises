@@ -18,7 +18,25 @@ import java.util.*;
  *  e: {b} // b occurs 2 times with e
  *  f: {a} // a occurs 1 time with f
  * ]
+ *
+ * Given an input list of strings, for each letter appearing anywhere
+ * in the list, find the other letter(s) that appear in the most
+ * number of words with that letter.
+ *
+ * Example:
+ * ['abc', 'bcd', 'cde'] =>
+ *   {
+ * 	a: [b, c],	# b appears in 1 word with a, c appears in 1 word with a
+ * 	b: [c], 	# c appears in 2 words with b, a and d each appear in only 1 word with b
+ * 	c: [b, d], 	# b appears in 2 words with c, d appears in 2 words with c. But a and e each
+ * 					  appear in only 1 word with c.
+ * 	d: [c],		# c appears in 2 words with d. But b and e each appear in only 1 word with d
+ * 	e: [c, d], 	# c appears in 1 word with e, d appears in 1 word with e
+ *
+ *   }
+ *
  */
+
 public class Neighbors {
     public static void main(String[] args){
         //"abef", "bcd", "bde", "cadf" ans) {a=[f], b=[d, e], c=[d], d=[b, c], e=[b], f=[a]}
@@ -26,6 +44,7 @@ public class Neighbors {
         String[] array = {"abc", "bcd", "cde"};
        // getMaxNeighbor(array);
         wordFrequency(array);
+        main();
     }
     private static Map<Character, Set<Character>> wordFrequency(String[] strs) {
         Set<Character> all = new HashSet<>();
@@ -72,5 +91,48 @@ public class Neighbors {
         }
         System.out.println(result);
         return result;
+    }
+
+    public static void main() {
+        String[] arry={"abef", "bcd", "bde", "cadf"};
+        Map<String,Integer> map = new HashMap<>();
+        Set<Character> set = new HashSet<>();
+        Arrays.stream(arry).forEach(word ->{
+            for(int i=0;i<word.length();i++){
+
+                for(int j=0;j<word.length();j++){
+                    if(i==j) continue;
+                    String comb="";
+                    comb+=word.charAt(i);
+                    comb+=word.charAt(j);
+                    map.put(comb, map.getOrDefault(comb,0)+1);
+                }
+                set.add(word.charAt(i));
+            }
+        });
+        Character[] chars = set.toArray(Character[]::new);
+        Map<Character,Set<Character>> output = new HashMap<>();
+        for(int x=0;x<chars.length;x++){
+            int initial=1;
+            output.put(chars[x],new HashSet<>());
+            for(int y=0;y<chars.length;y++){
+                if(x==y) continue;
+                String combi="";
+                combi+=chars[x];
+                combi+=chars[y];
+
+
+                //ab-1 ac-2
+                int count = map.getOrDefault(combi,0);
+                if(count==initial){
+                    output.get(chars[x]).add(chars[y]);
+                }else if(count>initial){
+                    initial =count;
+                    output.get(chars[x]).clear();
+                    output.get(chars[x]).add(chars[y]);
+                }
+            }
+        }
+        System.out.println(output);
     }
 }
